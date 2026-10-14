@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Happy Birthday Katie! 🎂✨</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Tailwind CSS v3 -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FFF7F2',
+              card: '#FFFFFF',
+              navy: '#1A365D',
+              coral: '#FF6B6B',
+              teal: '#20B2AA',
+              gold: '#F59E0B',
+              rose: '#FFE4E6'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            handwriting: ['Caveat', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+  <!-- BEGIN: Custom Animation Styles -->
+  <style data-purpose="candle-flame-animation">
+    @keyframes flicker {
+
+      0%,
+      100% {
+        transform: scale(1) rotate(-1deg);
+        opacity: 0.95;
+      }
+
+      25% {
+        transform: scale(1.1, 1.25) rotate(2deg);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(0.9, 0.95) rotate(-2deg);
+        opacity: 0.85;
+      }
+
+      75% {
+        transform: scale(1.05, 1.1) rotate(1deg);
+        opacity: 1;
+      }
+    }
+
+    .candle-flame {
+      animation: flicker 1.2s infinite ease-in-out;
+      transform-origin: bottom center;
+    }
+
+    .flame-extinguished {
+      opacity: 0 !important;
+      transform: scale(0.2) translateY(-10px) !important;
+      transition: all 0.4s ease-out;
+    }
+  </style>
+  <style data-purpose="floating-elements">
+    @keyframes floatSlow {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-12px) rotate(3deg);
+      }
+    }
+
+    @keyframes floatReverse {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(10px) rotate(-3deg);
+      }
+    }
+
+    .animate-float-slow {
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+
+    .animate-float-reverse {
+      animation: floatReverse 7s ease-in-out infinite;
+    }
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- END: Custom Animation Styles -->
+</head>
+
+<body
+  class="bg-[#FFF7F2] text-slate-800 font-sans antialiased selection:bg-rose-200 selection:text-rose-900 overflow-x-hidden min-h-screen">
+  <!-- BEGIN: Ambient Confetti Canvas -->
+  <canvas class="fixed inset-0 pointer-events-none z-50 w-full h-full" data-purpose="celebration-particles"
+    id="confetti-canvas"></canvas>
+  <!-- END: Ambient Confetti Canvas -->
+  <!-- BEGIN: Festive Top Garland Banner -->
+  <header class="w-full relative overflow-hidden pt-2" data-purpose="festive-garland-header">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-start opacity-90 select-none">
+      <!-- Garland SVG Left -->
+      <svg class="w-2/5 sm:w-1/3 h-12 text-[#FF6B6B] top-anim" fill="none" viewbox="0 0 300 40">
+        <path d="M0,5 Q75,35 150,5 Q225,35 300,5" fill="none" stroke="#E2E8F0" stroke-dasharray="4 3" stroke-width="2">
+        </path>
+        <polygon fill="#FF6B6B" points="20,12 35,40 5,40"></polygon>
+        <polygon fill="#F59E0B" points="75,20 90,48 60,48"></polygon>
+        <polygon fill="#20B2AA" points="135,14 150,42 120,42"></polygon>
+        <polygon fill="#3B82F6" points="195,19 210,47 180,47"></polygon>
+        <polygon fill="#EC4899" points="255,11 270,39 240,39"></polygon>
+      </svg>
+      <!-- Garland SVG Right -->
+      <svg class="w-2/5 sm:w-1/3 h-12 text-[#20B2AA] top-anim" fill="none" viewbox="0 0 300 40">
+        <path d="M0,5 Q75,35 150,5 Q225,35 300,5" fill="none" stroke="#E2E8F0" stroke-dasharray="4 3" stroke-width="2">
+        </path>
+        <polygon fill="#F59E0B" points="20,12 35,40 5,40"></polygon>
+        <polygon fill="#FF6B6B" points="75,20 90,48 60,48"></polygon>
+        <polygon fill="#8B5CF6" points="135,14 150,42 120,42"></polygon>
+        <polygon fill="#10B981" points="195,19 210,47 180,47"></polygon>
+        <polygon fill="#EC4899" points="255,11 270,39 240,39"></polygon>
+      </svg>
+    </div>
+  </header>
+  <!-- END: Festive Top Garland Banner -->
+  <!-- BEGIN: Main Hero Section -->
+  <main class="max-w-md mx-auto px-4 pt-3 pb-16 relative" style="overflow: hidden;">
+    <!-- Floating Party Balloons (Visual Accents for mobile header corners) -->
+    <div class="absolute -left-2 top-8 pointer-events-none animate-float-slow select-none opacity-70 scale-75"
+      data-purpose="decorative-balloon-left">
+      <div class="w-12 h-16 rounded-full bg-gradient-to-tr from-rose-400 to-rose-300 shadow-md relative mx-auto">
+        <div class="w-2 h-2 bg-rose-500 rounded-full absolute -bottom-1 left-1/2 -translate-x-1/2"></div>
+        <div class="w-0.5 h-12 bg-slate-300 mx-auto mt-16"></div>
+      </div>
+    </div>
+    <div class="absolute -right-2 top-6 pointer-events-none animate-float-reverse select-none opacity-70 scale-75"
+      data-purpose="decorative-balloon-right">
+      <div class="w-12 h-16 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-300 shadow-md relative mx-auto">
+        <div class="w-2 h-2 bg-amber-500 rounded-full absolute -bottom-1 left-1/2 -translate-x-1/2"></div>
+        <div class="w-0.5 h-12 bg-slate-300 mx-auto mt-16"></div>
+      </div>
+    </div><!-- Hero Card Container -->
+    <section
+      class="bg-white/90 backdrop-blur-md rounded-3xl p-5 shadow-xl border border-rose-100 text-center relative overflow-hidden"
+      data-purpose="hero-celebration-card"><!-- Top Subtle Badges / Ribbon -->
+      <!-- <div
+        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100/80 text-rose-700 text-xs font-semibold tracking-wide uppercase mb-4"
+        data-purpose="celebration-badge"><span>✨ Today is Katie's Special Day ✨</span></div> -->
+        <!-- Main Greetings -->
+         <div class="banner" data-anim="parent-anim-sec">
+           <div class="space-y-2 mb-6">
+             <h2 class="text-xl text-slate-700 font-sans font-medium tracking-tight" data-move="up">Hey <span
+                 class="font-bold text-slate-900">Katie,</span></h2>
+             <h1 class="text-4xl font-serif font-bold text-[#1A365D] tracking-tight leading-tight" data-move="up">Happy Birthday</h1>
+             <p class="text-lg font-serif italic text-slate-600 max-w-xs mx-auto pt-0.5" data-move="up">“May all your wishes come true”</p>
+             <p class="text-rose-500 font-handwriting text-2xl pt-1" data-move="up">from Harssha 💛</p>
+           </div><!-- Reference Image Card Representation -->
+           <div class="my-6 max-w-xs mx-auto rounded-2xl p-3 bg-gradient-to-r from-amber-50 via-rose-50 to-teal-50 border border-slate-200 shadow-sm"
+             data-purpose="card-reference-preview" data-move="up">
+             <img src="image/screen.png" alt="">
+           </div><!-- Interactive Birthday Cake & Blow Candles Section -->
+
+         </div>
+
+      <div class="pt-6 border-t border-slate-100" data-purpose="interactive-cake-section" data-anim="parent-anim-sec" style="margin-top: 70px;">
+        <div class="max-w-xs mx-auto" data-move="up">
+          <h3 class="text-base font-bold text-slate-800 mb-1">Make a Birthday Wish! 🌟</h3>
+          <p class="text-xs text-slate-500 mb-5 leading-relaxed">Tap the button below to blow out candles &amp; send
+            your wish to the stars.</p><!-- Illustrated SVG Cake with Dynamic Candles -->
+          <div class="relative w-64 h-48 mx-auto flex flex-col justify-end items-center"
+            data-purpose="interactive-svg-cake" id="cake-illustration"><!-- Candle Flames & Sticks Row -->
+            <div class="flex justify-center items-end gap-3 mb-1 z-10"><!-- Candle 1 -->
+              <div class="flex flex-col items-center">
+                <div
+                  class="candle-flame w-3 h-5 bg-gradient-to-t from-orange-500 via-amber-400 to-yellow-200 rounded-full shadow-[0_0_12px_#f59e0b] mb-1">
+                </div>
+                <div class="w-2 h-10 bg-emerald-400 rounded-t-sm shadow-inner border border-emerald-500"></div>
+              </div><!-- Candle 2 -->
+              <div class="flex flex-col items-center">
+                <div
+                  class="candle-flame w-3 h-5 bg-gradient-to-t from-orange-500 via-amber-400 to-yellow-200 rounded-full shadow-[0_0_12px_#f59e0b] mb-1">
+                </div>
+                <div class="w-2 h-12 bg-rose-400 rounded-t-sm shadow-inner border border-rose-500"></div>
+              </div><!-- Candle 3 (Middle) -->
+              <div class="flex flex-col items-center">
+                <div
+                  class="candle-flame w-3.5 h-6 bg-gradient-to-t from-orange-500 via-amber-400 to-yellow-200 rounded-full shadow-[0_0_14px_#f59e0b] mb-1">
+                </div>
+                <div class="w-2.5 h-14 bg-amber-400 rounded-t-sm shadow-inner border border-amber-500"></div>
+              </div><!-- Candle 4 -->
+              <div class="flex flex-col items-center">
+                <div
+                  class="candle-flame w-3 h-5 bg-gradient-to-t from-orange-500 via-amber-400 to-yellow-200 rounded-full shadow-[0_0_12px_#f59e0b] mb-1">
+                </div>
+                <div class="w-2 h-12 bg-teal-400 rounded-t-sm shadow-inner border border-teal-500"></div>
+              </div><!-- Candle 5 -->
+              <div class="flex flex-col items-center">
+                <div
+                  class="candle-flame w-3 h-5 bg-gradient-to-t from-orange-500 via-amber-400 to-yellow-200 rounded-full shadow-[0_0_12px_#f59e0b] mb-1">
+                </div>
+                <div class="w-2 h-10 bg-indigo-400 rounded-t-sm shadow-inner border border-indigo-500"></div>
+              </div>
+            </div><!-- Cake Base Layer -->
+            <div
+              class="w-56 h-20 bg-gradient-to-b from-amber-200 via-amber-300 to-amber-400 rounded-t-3xl relative shadow-md border-b-8 border-amber-500 overflow-hidden">
+              <!-- Decorative Icing Swirls -->
+              <div
+                class="absolute top-0 left-0 right-0 h-4 bg-white/90 rounded-b-xl flex justify-around items-center px-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span><span
+                  class="w-2.5 h-2.5 rounded-full bg-teal-400"></span><span
+                  class="w-2.5 h-2.5 rounded-full bg-amber-400"></span><span
+                  class="w-2.5 h-2.5 rounded-full bg-purple-400"></span><span
+                  class="w-2.5 h-2.5 rounded-full bg-rose-400"></span></div><!-- Confetti Sprinkles on Cake -->
+              <div class="absolute inset-0 pt-5 px-3 flex flex-wrap gap-1.5 justify-center opacity-70"><span
+                  class="w-1 h-2.5 bg-red-400 rotate-45 rounded"></span><span
+                  class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span><span
+                  class="w-1 h-2.5 bg-green-500 -rotate-12 rounded"></span><span
+                  class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></span><span
+                  class="w-2 h-1 bg-purple-500 rotate-12 rounded"></span><span
+                  class="w-1.5 h-1.5 bg-pink-500 rounded-full"></span></div>
+            </div><!-- Cake Plate -->
+            <div class="w-64 h-3.5 bg-slate-200 rounded-full shadow-inner border border-slate-300"></div>
+          </div><!-- Wish Action Button -->
+          <div class="mt-6"><button
+              class="w-full py-3.5 px-6 bg-gradient-to-r from-rose-500 via-coral to-amber-500 text-white font-semibold rounded-full shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 active:scale-95 transition-all duration-200 text-sm"
+              data-purpose="trigger-wish" id="blow-candles-btn">🎂 Blow Out The Candles!</button>
+            <p class="text-xs font-medium text-emerald-600 mt-2.5 opacity-0 transition-opacity duration-300 px-2"
+              id="wish-feedback">✨ Woohoo! All candles blown out. Katie, may this year bring endless magic! ✨</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- BEGIN: Personal Letter Section from Harssha -->
+    <section class="mt-10" data-purpose="personal-letter-section">
+      <div
+        class="bg-gradient-to-br from-amber-50/70 to-rose-50/60 rounded-3xl p-6 border border-amber-200/60 shadow-lg relative">
+        <div class="absolute top-4 right-5 text-3xl select-none opacity-40">💌</div>
+        <div class="space-y-4">
+          <div class="flex items-center gap-2.5"><span class="w-8 h-0.5 bg-rose-400"></span><span
+              class="text-xs uppercase tracking-widest font-bold text-rose-500">A Personal Note</span></div>
+          <h3 class="text-2xl font-serif text-slate-800">Dear Katie,</h3>
+          <p class="text-slate-700 leading-relaxed text-sm">Wishing you the brightest, most memorable birthday yet!
+            Every single day you bring so much warmth, laughter, and uplifting energy to those around you.</p>
+          <p class="text-slate-700 leading-relaxed text-sm">May this next journey around the sun overflow with
+            unforgettable adventures, dreams accomplished, laughter with favorite people, and abundant happiness in
+            everything you set your heart on.</p>
+          <div class="pt-4 border-t border-rose-200/50 flex justify-between items-end gap-2">
+            <div>
+              <p class="text-slate-500 text-xs">Always cheering for you,</p>
+              <p class="font-handwriting text-2xl text-[#1A365D] font-bold mt-0.5">Harssha</p>
+            </div>
+            <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold text-right">With Love &amp;
+              Joy</div>
+          </div>
+        </div>
+      </div>
+    </section><!-- BEGIN: Polaroid Memory Gallery -->
+    <section class="mt-10" data-purpose="polaroid-memory-gallery">
+      <div class="text-center mb-6">
+        <div
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-semibold tracking-wide uppercase mb-2">
+          <span>📸 SWEETEST MEMORIES</span></div>
+        <h3 class="text-2xl font-serif font-bold text-[#1A365D]">Moments with Katie</h3>
+        <p class="text-slate-600 mt-1 max-w-xs mx-auto text-xs leading-relaxed">A collection of unforgettable adventures
+          and favorite milestones together.</p>
+      </div><!-- Mobile 2-column Polaroid Grid -->
+      <div class="grid grid-cols-2 gap-3.5 pt-2"><!-- Polaroid 1 -->
+        <div
+          class="relative bg-white p-2.5 pb-4 rounded-xl shadow-md transition-all duration-300 transform -rotate-1 group">
+          <div
+            class="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-4 bg-rose-100/80 backdrop-blur-md opacity-80 rounded-sm -rotate-2 z-10 pointer-events-none border-l border-r border-white/60">
+          </div>
+          <div class="aspect-square w-full overflow-hidden rounded-lg bg-slate-100 mb-2 border border-slate-200/80"><img
+              alt="Warm candid photo of two cheerful smiling female best friends having iced coffee and cake outdoors"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1Vt18tZ5vz7qZSNqOkeaAopwD5r3GPj7--RsBQZPvhTda1gV3YpYZ_04n1aPHhpuDN85-JPMLFsxkaFlTNrp5XD2YdpmxBmSDsBrQbN9LpneYVdPnqSNxvQZGgVXZ_zAQyUWH3kE3gbmekGfF3P1XzQ_IaCC4RxAxPhGIne95NKKK7thnAmx8ULjxc-5V98qfFchmrre5vXHYF0Hzy6iGFkRxPH1SO1Mj59n0GT8Yo-6V8W7tVux0GZHCw" />
+          </div>
+          <div class="px-0.5 text-center">
+            <p class="font-handwriting text-sm text-slate-800 font-bold leading-tight">Cafe chats &amp; endless giggles
+              ☕💛</p>
+            <p class="text-[10px] text-slate-400 mt-0.5 uppercase tracking-wider font-medium">July 2023</p>
+          </div>
+        </div><!-- Polaroid 2 -->
+        <div
+          class="relative bg-white p-2.5 pb-4 rounded-xl shadow-md transition-all duration-300 transform rotate-1 group">
+          <div
+            class="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-4 bg-amber-100/80 backdrop-blur-md opacity-80 rounded-sm rotate-1 z-10 pointer-events-none border-l border-r border-white/60">
+          </div>
+          <div class="aspect-square w-full overflow-hidden rounded-lg bg-slate-100 mb-2 border border-slate-200/80"><img
+              alt="Candid shot of smiling young friends celebrating with sparklers and party hats"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1W7lSR7U3M20ij0bP6CZt_L0V4wM1OtB9XtcXCHaeT90xV3cHPCEshrnud19La_txkk1dofp1qcnXa5IuZfew9le3zhenJPl3nJ_zm_4Xzdc69EKoi4iTjbaQExN96_MkGGtUTOlKP4N4q3dJqxs1t_tK_J9nRB-BZNRnKA2vr15OeJsMYdzRyWSyKkIafLf9-29tw6jc57td38FiccywbTFutcjrusHhcpQBf9PewM-wvFJqvy9Nzx7F0V" />
+          </div>
+          <div class="px-0.5 text-center">
+            <p class="font-handwriting text-sm text-slate-800 font-bold leading-tight">Sparklers under the stars ✨🎉</p>
+            <p class="text-[10px] text-slate-400 mt-0.5 uppercase tracking-wider font-medium">New Year Eve</p>
+          </div>
+        </div><!-- Polaroid 3 -->
+        <div
+          class="relative bg-white p-2.5 pb-4 rounded-xl shadow-md transition-all duration-300 transform -rotate-1 group">
+          <div
+            class="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-4 bg-teal-100/80 backdrop-blur-md opacity-80 rounded-sm -rotate-1 z-10 pointer-events-none border-l border-r border-white/60">
+          </div>
+          <div class="aspect-square w-full overflow-hidden rounded-lg bg-slate-100 mb-2 border border-slate-200/80"><img
+              alt="Festive birthday picnic setup in a lush sunny park with flowers, pastel cake, fruit platter"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1W9zoFYR8Z1eEYmdzZE_Nx9BLK5BuWu-pzBta7HxoNj2O2ehjxQC_XJ_ZjpvSsZ6oYB1FgT5k2DwzRQXukrEx7Nqhosv6OG5SQPcSesdKbIWfB8QU-17hov1Yj84Hv8284P30MKMTSS-jzsmfgq_9BcRSEyWz3h9Ep2EReXl7Ydv7tFNvFhWdzbDIpg-kQhV-WA4asPk98ndzwwJ4_jplbA7md2-I91_5D5sUYCK3JOd7USSkk8g5M9fL__" />
+          </div>
+          <div class="px-0.5 text-center">
+            <p class="font-handwriting text-sm text-slate-800 font-bold leading-tight">Sunshine picnic in the park 🎂🧺
+            </p>
+            <p class="text-[10px] text-slate-400 mt-0.5 uppercase tracking-wider font-medium">Spring Days</p>
+          </div>
+        </div><!-- Polaroid 4 -->
+        <div
+          class="relative bg-white p-2.5 pb-4 rounded-xl shadow-md transition-all duration-300 transform rotate-1 group">
+          <div
+            class="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-4 bg-rose-100/80 backdrop-blur-md opacity-80 rounded-sm rotate-2 z-10 pointer-events-none border-l border-r border-white/60">
+          </div>
+          <div class="aspect-square w-full overflow-hidden rounded-lg bg-slate-100 mb-2 border border-slate-200/80"><img
+              alt="Aesthetic scenic travel photo of young women travelers laughing overlooking the sea"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1WXPmKK2F7NUg13BJckMI9UzByXxELfHqEkVgSb6j8SyiRRvSm9_KiMKJUvOsNyb0__OA0WG8gnN-fKaxGgaaKSO44dUJpjPRRA2WtF8z-xyjJyIKevH7Ud4Swowm9ciUs3_HSJHI91TrqRbE4xfRP9Q-IxRtUHN34tDh2S8rwR7rEHfw_8d0h1fA_Od9Y6-EUcTZ2fv5xA7eL_CFnlRssnEGpQmmMcH4379TXz45o1MwoOXn23pss3low" />
+          </div>
+          <div class="px-0.5 text-center">
+            <p class="font-handwriting text-sm text-slate-800 font-bold leading-tight">Scenic sea breezes &amp; hikes
+              🌊🏔️</p>
+            <p class="text-[10px] text-slate-400 mt-0.5 uppercase tracking-wider font-medium">Roadtrip</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- BEGIN: Birthday Highlights Section (Stacked for Mobile) -->
+    <section class="mt-10" data-purpose="celebration-highlights">
+      <div class="text-center mb-6">
+        <h3 class="text-2xl font-serif font-bold text-[#1A365D]">Three Wishes For Katie</h3>
+        <p class="text-slate-600 mt-1 text-xs">Here's to celebrating everything you are!</p>
+      </div>
+      <div class="space-y-3.5"><!-- Card 1 -->
+        <article class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-4">
+          <div
+            class="w-11 h-11 rounded-xl bg-rose-100 text-rose-600 flex-shrink-0 flex items-center justify-center text-xl">
+            🌟</div>
+          <div>
+            <h4 class="text-base font-bold text-slate-800 mb-1">Infinite Joy</h4>
+            <p class="text-slate-600 text-xs leading-relaxed">Days filled with sunshine, big genuine smiles, and little
+              peaceful moments that brighten your routine.</p>
+          </div>
+        </article><!-- Card 2 -->
+        <article class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-4">
+          <div
+            class="w-11 h-11 rounded-xl bg-amber-100 text-amber-600 flex-shrink-0 flex items-center justify-center text-xl">
+            🚀</div>
+          <div>
+            <h4 class="text-base font-bold text-slate-800 mb-1">Grand Milestones</h4>
+            <p class="text-slate-600 text-xs leading-relaxed">Conquering your goals, thriving in every passion project,
+              and finding inspiration around every corner this year.</p>
+          </div>
+        </article><!-- Card 3 -->
+        <article class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-4">
+          <div
+            class="w-11 h-11 rounded-xl bg-teal-100 text-teal-600 flex-shrink-0 flex items-center justify-center text-xl">
+            🥂</div>
+          <div>
+            <h4 class="text-base font-bold text-slate-800 mb-1">Cheers &amp; Memories</h4>
+            <p class="text-slate-600 text-xs leading-relaxed">Late-night talks, wonderful celebrations, and hearty
+              laughs shared with people who cherish you deeply.</p>
+          </div>
+        </article>
+      </div>
+    </section><!-- BEGIN: Send Birthday Love Widget (Mobile Optimized) -->
+    <section class="mt-10 text-center" data-purpose="virtual-toast-tribute">
+      <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-md">
+        <h4 class="text-xl font-serif font-bold text-slate-800 mb-1">Raise a Virtual Glass 🥂</h4>
+        <p class="text-slate-500 text-xs mb-4">Tap to send an instant burst of celebratory confetti!</p>
+        <div class="flex flex-col gap-2.5"><button
+            class="toast-btn w-full py-2.5 px-4 rounded-full bg-rose-50 text-rose-700 hover:bg-rose-100 active:scale-95 text-xs font-semibold transition-all flex items-center justify-center gap-2 border border-rose-200/50"
+            data-message="🥳 Happy Birthday Katie!"><span>🥳</span> Happy Birthday!</button><button
+            class="toast-btn w-full py-2.5 px-4 rounded-full bg-amber-50 text-amber-700 hover:bg-amber-100 active:scale-95 text-xs font-semibold transition-all flex items-center justify-center gap-2 border border-amber-200/50"
+            data-message="✨ All my best wishes!"><span>✨</span> Best Wishes!</button><button
+            class="toast-btn w-full py-2.5 px-4 rounded-full bg-teal-50 text-teal-700 hover:bg-teal-100 active:scale-95 text-xs font-semibold transition-all flex items-center justify-center gap-2 border border-teal-200/50"
+            data-message="🥂 Cheers to you!"><span>🥂</span> Virtual Toast!</button></div>
+        <div class="mt-3 text-xs font-semibold text-rose-600 h-4" id="toast-notification"></div>
+      </div>
+    </section>
+  </main>
+  <!-- END: Main Hero Section -->
+  <!-- BEGIN: Footer -->
+  <footer class="border-t border-rose-200/60 bg-white/50 py-8 text-center" data-purpose="page-footer">
+    <p class="text-slate-500 text-sm">
+      Crafted with cheer for <span class="font-semibold text-slate-800">Katie</span> | Warmest wishes from <span
+        class="font-semibold text-[#1A365D]">Harssha</span>
+    </p>
+    <p class="text-xs text-slate-400 mt-1">May every wish you made today come true ✨</p>
+  </footer>
+  <!-- END: Footer -->
+  <!-- BEGIN: JavaScript Logic (Confetti & Candle Blowout) -->
+  <script data-purpose="confetti-engine">
+    // Lightweight Confetti Animation Engine
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let confettiParticles = [];
+    const colors = ['#FF6B6B', '#F59E0B', '#20B2AA', '#3B82F6', '#EC4899', '#8B5CF6'];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class ConfettiPiece {
+      constructor(x, y, isBurst = false) {
+        this.x = x !== undefined ? x : Math.random() * canvas.width;
+        this.y = y !== undefined ? y : -10;
+        this.size = Math.random() * 8 + 6;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.speedX = isBurst ? (Math.random() - 0.5) * 14 : (Math.random() - 0.5) * 3;
+        this.speedY = isBurst ? (Math.random() * -12) - 3 : Math.random() * 3 + 2;
+        this.rotation = Math.random() * 360;
+        this.rotationSpeed = (Math.random() - 0.5) * 8;
+        this.opacity = 1;
+        this.isBurst = isBurst;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.rotation += this.rotationSpeed;
+
+        if (this.isBurst) {
+          this.speedY += 0.25; // gravity
+          this.opacity -= 0.01;
+        }
+
+        if (this.y > canvas.height) {
+          if (!this.isBurst) {
+            this.y = -10;
+            this.x = Math.random() * canvas.width;
+          }
+        }
+      }
+
+      draw() {
+        if (this.opacity <= 0) return;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, this.opacity);
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.rotation * Math.PI) / 180);
+        ctx.fillStyle = this.color;
+        ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size * 0.7);
+        ctx.restore();
+      }
+    }
+
+    // Initialize initial ambient falling particles
+    for (let i = 0; i < 40; i++) {
+      confettiParticles.push(new ConfettiPiece());
+    }
+
+    function createConfettiBurst(x, y, count = 60) {
+      for (let i = 0; i < count; i++) {
+        confettiParticles.push(new ConfettiPiece(x, y, true));
+      }
+    }
+
+    function animateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confettiParticles = confettiParticles.filter(p => p.opacity > 0);
+      confettiParticles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      requestAnimationFrame(animateConfetti);
+    }
+    animateConfetti();
+  </script>
+  <script data-purpose="interaction-handlers">
+    // Interactive Candle Blowing Feature
+    const blowBtn = document.getElementById('blow-candles-btn');
+    const feedback = document.getElementById('wish-feedback');
+    const flames = document.querySelectorAll('.candle-flame');
+    let candlesBlown = false;
+
+    blowBtn.addEventListener('click', (e) => {
+      const rect = blowBtn.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top;
+
+      if (!candlesBlown) {
+        // Blow out flames
+        flames.forEach(flame => flame.classList.add('flame-extinguished'));
+        blowBtn.textContent = '🕯️ Relight Candles';
+        feedback.classList.remove('opacity-0');
+        candlesBlown = true;
+
+        // Trigger celebratory confetti burst
+        createConfettiBurst(centerX, centerY, 90);
+        createConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.4, 70);
+      } else {
+        // Relight flames
+        flames.forEach(flame => flame.classList.remove('flame-extinguished'));
+        blowBtn.textContent = '🎂 Blow Out The Candles!';
+        feedback.classList.add('opacity-0');
+        candlesBlown = false;
+      }
+    });
+
+    // Virtual Toast Interactive Buttons
+    const toastButtons = document.querySelectorAll('.toast-btn');
+    const toastNotification = document.getElementById('toast-notification');
+
+    toastButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const msg = btn.getAttribute('data-message');
+        toastNotification.textContent = `${msg} sent to Katie!`;
+
+        // Small burst at button position
+        const rect = btn.getBoundingClientRect();
+        createConfettiBurst(rect.left + rect.width / 2, rect.top, 35);
+
+        setTimeout(() => {
+          toastNotification.textContent = '';
+        }, 3000);
+      });
+    });
+  </script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+  <!-- END: JavaScript Logic -->
+</body>
+
+</html>
